@@ -4,20 +4,21 @@ services:
   mysql:
     image: mysql
     environment:
-      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: root
       MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: tips
+      MYSQL_USER: hello
+      MYSQL_PASSWORD: world
     ports:
       - 3306:3306
-    volumes:
-      - mysql-data:/var/lib/mysql
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     environment:
       PMA_ARBITRARY: 1
       PMA_HOST: mysql
-      PMA_USER: root
-      PMA_PASSWORD: password
+      PMA_USER: hello
+      PMA_PASSWORD: world
     restart: always
     ports:
       - 8080:80
