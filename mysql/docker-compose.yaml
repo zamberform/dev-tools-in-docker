@@ -24,6 +24,8 @@ services:
       - 8080:80
     links: 
       - mysql:db
+    depends_on: 
+      - mysql
 
 volumes:
   mysql-data:
